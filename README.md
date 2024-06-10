@@ -13,7 +13,7 @@ Ensure you have Python installed on your system. This project was developed usin
 
 1. Clone the repository to your local machine:
     ```sh
-    git clone https://github.com/your-repo.git
+    git clone https://github.com/MohammedAyesh/ebayfinder.git
     cd your-repo
     ```
 
