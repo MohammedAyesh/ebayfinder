@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ebayfinder README</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>ebayfinder</h1>
+    <p>This is my early version of my product scraper utilizing Google Gemini to return the best prices on products based on certain criteria.</p>
+    <p>This project is a web application built using Flask.</p>
+    <p>Use this code as you please, this is meant to show the possibilities of using Generative AI for product scraping.</p>
+
+    <h2>Prerequisites</h2>
+    <p>Ensure you have Python installed on your system. This project was developed using Python 3.9, but it should work with any version of Python 3.x.</p>
+
+    <h2>Installation</h2>
+    <ol>
+        <li>Clone the repository to your local machine:
+            <pre><code>git clone https://github.com/your-repo.git
+cd your-repo
+            </code></pre>
+        </li>
+        <li>Create and activate a virtual environment:
+            <pre><code>python3 -m venv venv
+source venv/bin/activate
+            </code></pre>
+        </li>
+        <li>Install the required packages:
+            <pre><code>pip install Flask Flask-WTF Jinja2 pandas google-generativeai scrapfly
+            </code></pre>
+        </li>
+    </ol>
+
+    <h2>Required Python Packages</h2>
+    <p>Below are the necessary pip imports for this project:</p>
+    <ul>
+        <li>Flask</li>
+        <li>Flask-WTF</li>
+        <li>Jinja2</li>
+        <li>Pandas</li>
+        <li>Scrapfly</li>
+        <li>Google Gemini</li>
+    </ul>
+    <p>You can install these packages by running:
+        <pre><code>pip install Flask Flask-WTF Jinja2 pandas google-generativeai scrapfly
+        </code></pre>
+    </p>
+
+    <h2>Setting API Keys</h2>
+    <p>Go to <code>finresult.py</code> to line 9 where it says:
+        <pre><code>genai.configure(api_key="")
+        </code></pre>
+        Insert your Gemini API key.
+    </p>
+    <p>Go to <code>ebay.py</code> to line 15 where it says:
+        <pre><code>SCRAPFLY_KEY = ""
+        </code></pre>
+        Insert your Scrapfly Key here.
+    </p>
+
+    <h2>Running the Application</h2>
+    <p>To run the application, use the following command:
+        <pre><code>python app.py
+        </code></pre>
+    </p>
+
+    <h2>Screenshots</h2>
+    <img src="https://github.com/MohammedAyesh/ebayfinder/assets/46912003/4b9b562e-b092-4bb5-a057-3c6221d5a907" alt="Screenshot 1" style="max-width:100%; height:auto;">
+    <img src="https://github.com/MohammedAyesh/ebayfinder/assets/46912003/8de9d05b-fd58-4048-b71a-80e954bd2836" alt="Screenshot 2" style="max-width:100%; height:auto;">
+
+</body>
+</html>

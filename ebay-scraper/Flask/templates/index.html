@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cs.css') }}">
+    <style>
+      
+        .all-browsers {
+        padding: 20px;
+        width: 20%;
+        box-sizing: border-box;
+        }
+
+
+
+        .all-browsers p {
+            margin: 0 0 10px 0;
+            padding: 0;
+        }
+    
+        .hidden {
+            visibility: hidden;
+        }
+        .navbar {
+            overflow: hidden;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+    </style>
+</head>
+<body>  
+    <div class="navbar">
+        <a href="#Placeholder 1">#Placeholder 1</a>
+        <a href="#Placeholder 2">#Placeholder 2</a>
+        <a href="#Placeholder 3">#Placeholder 3</a>
+        <a href="/readme">Read Me</a>
+    </div>
+    <article class = "all-browsers">
+        <header>
+          <h1>Product Scraper</h1>
+          <p>Developed by Mohammed Ayesh</p>
+          <p>Input the product name and the </p>
+        </header>
+        <p>minimum price the product could go for</p>
+        <p>Example:(Playstation 5, 100)</p>
+        <p> This is     to eliminate accessories</p>
+        <p> and decrease processing time</p>
+      </article>
+    <!-- Loading Screen HTML -->
+    <div id="loading-screen" class="center">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Form HTML -->
+    
+    <form method="POST" action="/process_form" onsubmit="showLoadingScreen()">
+        <div class="form__group field">
+            <input type="text" class="form__field" placeholder="Name" name="product" id='name' required />
+            <label for="name" class="form__label">Product</label>
+        </div>
+        <div class="form__group field">
+            <input type="number" class="form__field" placeholder="Price" name="min_price" id='price' required />
+            <label for="price" class="form__label">Expected Minimum Price: </label>
+        </div>
+        <button type="submit">Search</button>
+    </form>
+
+    <!-- JavaScript for Showing and Hiding the Loading Screen and Form Elements -->
+    <script>
+        function showLoadingScreen() {
+            document.getElementById('loading-screen').style.display = 'flex';
+            document.querySelector('form').classList.add('hidden');
+            document.querySelector('article').classList.add('hidden');
+        }
+
+        window.onload = function() {
+            document.getElementById('loading-screen').style.display = 'none';
+        }
+    </script>
+   
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='cs.css') }}">
+</head>
+<body>
+    <h1>Search Results</h1>
+    <form method="POST" action="/">
+        <button type="submit">Home</button>
+    </form>
+    <table border="1">
+        <tr>
+            <th>Index</th>
+            <th>URL</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Location</th>
+            <th>Photo</th>
+            <th>Condition</th>
+        </tr>
+        {% for row in data %}
+        <tr>
+            <td>{{ row.index }}</td>
+            <td><a href="{{ row.url }}">{{ row.url }}</a></td>
+            <td>{{ row.title }}</td>
+            <td>{{ row.price }}</td>
+            <td>{{ row.location }}</td>
+            <td><img src="{{ row.photo }}" alt="photo" width="100"></td>
+            <td>{{ row.condition }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
